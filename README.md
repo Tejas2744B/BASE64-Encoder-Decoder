@@ -1,48 +1,37 @@
-# BASE64-Encoder-Decoder
-creating a tool to encode and decode text using BASE64, a common data encoding method in cybersecurity
 
+# ✍️ Base64 Encoder/Decoder Tool
 
-It aims to provide a fast base64 implementation for base64 encoding/decoding.
+This is a simple command-line utility for converting text strings to and from **Base64** format. Base64 is a crucial encoding scheme in cybersecurity, used primarily to safely transmit binary data (like images or encrypted keys) across systems that are designed to handle only text (like email or HTTP forms).
 
-Installation
-pip install pybase64
-Usage
-pybase64 uses the same API as Python base64 "modern interface" (introduced in Python 2.4) for an easy integration.
+This project was developed as a solution for **Task 5: Base64 Encoder/Decoder**.
 
-To get the fastest decoding, it is recommended to use the pybase64.b64decode and validate=True when possible.
+## ✨ Features
 
-import pybase64
+* **Bi-Directional Conversion:** Supports both encoding (Text to Base64) and decoding (Base64 to Text).
+* **Standard Library Use:** Implemented using Python's built-in `base64` module, ensuring reliability and efficiency.
+* **Robust Error Handling:** Gracefully handles invalid Base64 input, incorrect padding, and potential non-UTF-8 output during decoding.
+* **Simple CLI:** Provides an easy-to-use, interactive command-line interface for function selection.
+* **Edge Case Handling:** Ensures safe operation with empty input strings.
 
-print(pybase64.b64encode(b'>>>foo???', altchars='_:'))
-# b'Pj4_Zm9vPz8:'
-print(pybase64.b64decode(b'Pj4_Zm9vPz8:', altchars='_:', validate=True))
-# b'>>>foo???'
+## ⚙️ Requirements & Installation
 
-# Standard encoding helpers
-print(pybase64.standard_b64encode(b'>>>foo???'))
-# b'Pj4+Zm9vPz8/'
-print(pybase64.standard_b64decode(b'Pj4+Zm9vPz8/'))
-# b'>>>foo???'
+### Prerequisites
 
-# URL safe encoding helpers
-print(pybase64.urlsafe_b64encode(b'>>>foo???'))
-# b'Pj4-Zm9vPz8_'
-print(pybase64.urlsafe_b64decode(b'Pj4-Zm9vPz8_'))
-# b'>>>foo???'
-A command-line tool is also provided. It has encode, decode and benchmark subcommands.
+* Python 3.x (Uses standard library only)
 
-usage: pybase64 [-h] [-V] {benchmark,encode,decode} ...
+### Setup
 
-pybase64 command-line tool.
+1.  **Clone the Repository:**
+    ```bash
+    git clone [https://github.com/YourUsername/base64-tool.git](https://github.com/Tejas2744B/base64-tool.git)
+    cd base64-tool
+    ```
 
-positional arguments:
-  {benchmark,encode,decode}
-                        tool help
-    benchmark           -h for usage
-    encode              -h for usage
-    decode              -h for usage
+2.  **No external dependencies are required.**
 
-optional arguments:
-  -h, --help            show this help message and exit
-  -V, --version         show program's version number and exit
-Full documentation on : http://pybase64.readthedocs.io/en/stable/?badge=stable
+## 💻 Usage
+
+Run the script directly from your terminal:
+
+```bash
+python base64_tool.py
